@@ -1,0 +1,22 @@
+{
+  "name": "lyndi",
+  "version": "1.0.0",
+  "description": "移动端web框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bandow/lyndi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bandow/lyndi/issues"
+  },
+  "homepage": "https://github.com/bandow/lyndi#readme",
+  "devDependencies": {
+    "webpack": "^2.5.1"
+  }
+}
