@@ -1,46 +1,23 @@
-// var webpack = require('webpack');
-// var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
- 
-// module.exports = {
-    //插件项
-//     plugins: [commonsPlugin],
-    //页面入口文件配置
-//     entry: {
-//         index : './src/scripts/index.js',
-//         base : './src/scripts/base.js'
-//     },
-//     //入口文件输出配置
-//     output: {
-//         path: 'dist/scripts/',
-//         filename: '[name].js'
-//     },
-//     module: {
-//         //加载器配置
-//         loaders: [
-//             { test: /\.css$/, loader: 'style-loader!css-loader' },
-//             { test: /\.js$/, loader: 'jsx-loader?harmony' },
-//             { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
-//             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
-//         ]
-//     },
-    //其它解决方案配置
-//     resolve: {
-//         root: 'E:/github/flux-example/src', //绝对路径
-//         extensions: ['', '.js', '.json', '.scss'],
-//         alias: {
-//             AppStore : 'js/stores/AppStores.js',
-//             ActionType : 'js/actions/ActionType.js',
-//             AppAction : 'js/actions/AppAction.js'
-//         }
-//     }
-// };
-module.exports = {
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const config = {
     entry: {
-        index:'./src/scripts/index.js',
-        base:'./src/scripts/base.js'
+        index:'./src/scripts/index.js'
     },
     output:{
-        path: __dirname + "/build/scripts",
+        path: __dirname + '/build/scripts',
         filename: '[name].js'
     },
+    module: {
+        rules: [
+        {
+            test: /\.css$/,
+			use: ExtractTextPlugin.extract({
+                use: 'css-loader'
+            })
+        }]
+    },
+    plugins: [
+       new ExtractTextPlugin('../styles/[name].css'),
+    ]
 }
+module.exports=config;

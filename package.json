@@ -17,6 +17,15 @@
   },
   "homepage": "https://github.com/bandow/lyndi#readme",
   "devDependencies": {
+    "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.5.2",
+    "postcss-loader": "^2.0.5",
+    "sass": "^0.5.0",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.17.0",
+    "ts-loader": "^2.0.3",
     "webpack": "^2.5.1"
   }
 }
