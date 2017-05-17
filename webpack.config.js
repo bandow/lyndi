@@ -9,11 +9,9 @@ const config = {
     },
     module: {
         rules: [
-        {
-            test: /\.css$/,
-			use: ExtractTextPlugin.extract({
-                use: 'css-loader'
-            })
+       {
+            test: /\.(css|scss)$/,
+            loader:"style-loader!css-loader!postcss-loader!sass-loader"
         }]
     },
     plugins: [
