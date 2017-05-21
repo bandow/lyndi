@@ -1,3 +1,4 @@
+// import '../../src/styles/common.css';
 function mask(str){
 	alert(str);
 }

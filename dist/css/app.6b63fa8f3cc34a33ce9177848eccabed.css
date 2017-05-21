@@ -1,0 +1,13 @@
+body html {
+  background-color: #f02f02; }
+  body html div {
+    margin: 0;
+    padding: 0; }
+.layer {
+  width: 600px;
+  height: 200px;
+  background-color: #ccc; }
+  .layer div {
+    background-color: red;
+    width: 400px;
+    height: 100px; }
