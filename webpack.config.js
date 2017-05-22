@@ -1,29 +1,31 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const extractSass = new ExtractTextPlugin({
-    filename: "css/[name].[contenthash].css",
+    filename: "styles/[name].[contenthash].css",
     disable: process.env.NODE_ENV === "development"
 });
 const config = {
     entry: {
         app:'./src/app.js',
-        main:'./src/scripts/main.js',
-        a:'./src/scripts/a.js',
-        b:'./src/scripts/a.js'
+        index:'./src/scripts/index.js',
     },
     output:{
         path: __dirname + '/dist',
-        filename: 'js/[name]-[chunkhash].js',
-        publicPath: '' //上线地址
+        filename: 'scripts/[name]-[chunkhash].js',
+        //publicPath: '' //上线地址
     },
     module: {
         rules: [
             {
-                test: '/\.js$/',
-                use: [{
-                    loader:'babel',
-                    options: { presets: ['latest'] },
-                }],
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                include: /(src)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                      presets: ['env']
+                    }
+                }
             },
             {
                 test: /\.html$/,
@@ -59,7 +61,7 @@ const config = {
                 //     }
                 // }],
                 use: [
-                  'url-loader?limit=1000&name=img/[name]-[hash:5].[ext]',
+                  'url-loader?limit=1000&name=../images/[name]-[hash:5].[ext]',
                   'image-webpack-loader'
                 ]
             },
@@ -67,40 +69,24 @@ const config = {
     },
     plugins: [
        new htmlWebpackPlugin({
-            filename:'app.html',
-            template:'app.html',
+            filename:'views/app.html',
+            template:'src/views/app.html',
             inject:'body',  //指定js放那个位子 比如body
-            title:'webpakc a App',
             chunks:['app'],   //指定那个js
        }),
        new htmlWebpackPlugin({
-            filename:'index.html',
-            template:'index.html',
-            inject:false,  //指定js放那个位子 比如body
-            title:'webpakc a good',
-            date: new Date(),
+            filename:'views/index.html',
+            template:'src/views/index.html',
+            inject:'body',  //指定js放那个位子 比如body
             minify:{            //压缩
                 removeComments:false,   //true去掉注释
                 collapseWhitespace:false  //true去掉空格
-            }
+            },
+            chunks:['index'],   //指定那个js
+            //excludeChunks:['app']  //排除app
        }),
-       new htmlWebpackPlugin({
-            filename:'a.html',
-            template:'template.html',
-            inject:false,
-            title:'webpakc a',
-            //chunks:['a'],   //指定那个js
-            excludeChunks:['b']  //排除b
-       }),
-       new htmlWebpackPlugin({
-            filename:'b.html',
-            template:'template.html',
-            inject:false,
-            title:'webpakc b',
-            //chunks:['b'],  //指定那个js
-            excludeChunks:['a'] //排除a
-       }),
-
+       
+       //转化sass的方法
        extractSass
     ]
 }

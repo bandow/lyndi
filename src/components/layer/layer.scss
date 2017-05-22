@@ -1,10 +1,22 @@
+@import '../../sass/variable';
 .layer{
-	width:600px;
-	height:200px;
-	background-color:#ccc;
-	div{
-		background-color:red;
-		width:400px;
-		height:100px;
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:998;
+	background-color:$black;
+	opacity:.8;
+}
+.layer-comtent{
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:999;
+	@include transform(translate(-50%,-50%));
+	background-color:$white;
+	p{
+		font:.75rem/1.5 $publicFont;
 	}
 }
