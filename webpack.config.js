@@ -53,15 +53,15 @@ const config = {
             {
                 test: /\.(png|jpg|gif|svg)$/i,
                 // use: [{ 
-                //     // loader:"file-loader",   //打包图片
-                //     // loader:"url-loader",       //打包图片转为64：
+                    // loader:"file-loader",   //打包图片
+                //     loader:"url-loader",       //打包图片转为64：
                 //     options:{
                 //         // limit: 25000,           //图片大小
                 //         // name: 'img/[name]-[hash:5].[ext]'  //打包地址
                 //     }
                 // }],
                 use: [
-                  'url-loader?limit=1000&name=../images/[name]-[hash:5].[ext]',
+                  'url-loader?limit=1000&name=images/[name]-[hash:5].[ext]',
                   'image-webpack-loader'
                 ]
             },
@@ -69,13 +69,13 @@ const config = {
     },
     plugins: [
        new htmlWebpackPlugin({
-            filename:'views/app.html',
+            filename:'app.html',
             template:'src/views/app.html',
             inject:'body',  //指定js放那个位子 比如body
             chunks:['app'],   //指定那个js
        }),
        new htmlWebpackPlugin({
-            filename:'views/index.html',
+            filename:'index.html',
             template:'src/views/index.html',
             inject:'body',  //指定js放那个位子 比如body
             minify:{            //压缩

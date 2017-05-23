@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,33 +74,6 @@
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-__webpack_require__(5);
-
-var _layer = __webpack_require__(6);
-
-var _layer2 = _interopRequireDefault(_layer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function layer() {
-	return {
-		name: 'layer',
-		tpl: _layer2.default
-	};
-}
-exports.default = layer;
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10360,43 +10333,29 @@ return jQuery;
 
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _jquery = __webpack_require__(2);
+var _jquery = __webpack_require__(1);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 __webpack_require__(0);
 
-var _layer = __webpack_require__(1);
-
-var _layer2 = _interopRequireDefault(_layer);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import './../scr/sass/app.scss';
+// import Layer from './components/layer/layer.js';
 var App = function App() {
-	var dom = document.getElementById("App");
-	var layer = new _layer2.default();
-	dom.innerHTML = layer.tpl;
+	// var dom=document.getElementById("App");
+	// var layer =new Layer;
+	// dom.innerHTML=layer.tpl;
+	// $(".dd").hide();
 };
 new App();
-
-/***/ }),
-/* 4 */,
-/* 5 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"layer\"></div>\r\n<div class=\"layer-comtent\">\r\n\t<p>加载中</p>\r\n</div>";
 
 /***/ })
 /******/ ]);

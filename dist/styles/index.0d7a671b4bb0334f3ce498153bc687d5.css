@@ -71,7 +71,7 @@ a, a:hover, a:active, a:visited, a:link, a:focus {
 
 input {
   -webkit-appearance: none;
-  /*去除input默认样式*/ }
+  /*ios去除input默认样式*/ }
 
 html {
   font-size: 18px; }

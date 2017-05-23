@@ -71,7 +71,7 @@ a, a:hover, a:active, a:visited, a:link, a:focus {
 
 input {
   -webkit-appearance: none;
-  /*去除input默认样式*/ }
+  /*ios去除input默认样式*/ }
 
 html {
   font-size: 18px; }
@@ -127,26 +127,3 @@ html {
   height: 100%;
   margin: 0 auto;
   overflow: hidden; }
-.layer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 998;
-  background-color: #000;
-  opacity: .8; }
-
-.layer-comtent {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 999;
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background-color: #fff; }
-  .layer-comtent p {
-    font: 0.75rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
