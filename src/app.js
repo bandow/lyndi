@@ -1,11 +1,11 @@
+// import './../src/scripts/headerCommon.js';
 import $ from 'jquery';
-import './../src/sass/common.scss';
 import './../src/sass/app.scss';
-// import Layer from './components/layer/layer.js';
+// import Header from './components/header/header.js';
 const App=function(){
-	// var dom=document.getElementById("App");
-	// var layer =new Layer;
-	// dom.innerHTML=layer.tpl;
+	// var html=document.getElementById("html");
+	// var header =new Header;
+	// html.innerHTML=header.tpl;
 	// $(".dd").hide();
 }
 new App();

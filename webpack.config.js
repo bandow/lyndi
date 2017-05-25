@@ -8,6 +8,7 @@ const config = {
     entry: {
         app:'./src/app.js',
         index:'./src/scripts/index.js',
+        // headerCommon:'./src/scripts/headerCommon.js',
     },
     output:{
         path: __dirname + '/dist',

@@ -1,5 +1,49 @@
+@import "base","variable","common";
+.wrapper{
+	width:100%;
+	max-width:640px;
+	min-height:100%;
+	height:100%;
+	margin:0 auto;
+	overflow:hidden;
+}
 .header{
 	width:100%;
-	height:2rem;
+	height:40px;
 	background-color:red;
+	h1{
+		font-size:.75rem;
+		line-height:40px;
+		text-align:center;
+		color:#fff;
+	}
+}
+.container{
+	@include transform(translate3d(0,-50%,0));
+	@include transform-origin(20% 40%);
+	@include transition(all .5s .5s linear);
+	@include animation(myfirst 5s);
+	@include animation-name(myfirst);
+	@include column-rule(3px outset #ff0000);
+	@include display(flex);
+	
+	p{
+		display:-webkit-flex;
+		display:flex;
+		align-items:center;
+		span{
+			&:first-child{
+				flex:1;
+			}
+			&:last-child{
+				flex:2
+			}
+		}
+	}
+}
+
+@include keyframes(myfirst)
+{
+	from {background: red;}
+	to {background: yellow;}
 }
