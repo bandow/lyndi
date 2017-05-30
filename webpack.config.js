@@ -1,3 +1,5 @@
+const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const extractSass = new ExtractTextPlugin({
@@ -5,15 +7,16 @@ const extractSass = new ExtractTextPlugin({
     // disable: process.env.NODE_ENV === "development"
 });
 const config = {
+    context: path.resolve(__dirname, './src'),
     entry: {
-        app:'./src/app.js',
-        index:'./src/scripts/index.js',
+        app:'./app.js',
+        index:'./scripts/index.js',
         // headerCommon:'./src/scripts/headerCommon.js',
     },
     output:{
-        path: __dirname + '/dist',
+        path: path.resolve(__dirname, './dist'),
         filename: 'scripts/[name]-[chunkhash:5].js',
-        //publicPath: '' //上线地址
+        //publicPath: '' 
     },
     module: {
         rules: [
@@ -33,13 +36,6 @@ const config = {
                 use: [ "html-loader" ]
             },
             {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: 'css-loader'
-                })
-            },
-            {
                 test: /\.scss$/,
                 use: extractSass.extract({
                     use: [{
@@ -47,7 +43,8 @@ const config = {
                     }, {
                         loader: "sass-loader"
                     }],
-                    fallback: "style-loader"
+                    fallback: "style-loader",
+                    publicPath:"../"              //真是个坑。坑死人了
                 })
             },
             {
@@ -62,13 +59,13 @@ const config = {
     plugins: [
        new htmlWebpackPlugin({
             filename:'app.html',
-            template:'src/views/app.html',
+            template:'app.html',
             inject:'body',  //指定js放那个位子 比如body
             chunks:['app'],   //指定那个js
        }),
        new htmlWebpackPlugin({
             filename:'index.html',
-            template:'src/views/index.html',
+            template:'index.html',
             inject:'body',  //指定js放那个位子 比如body
             minify:{            //压缩
                 removeComments:false,   //true去掉注释

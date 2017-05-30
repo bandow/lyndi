@@ -1,4 +1,4 @@
-import './../src/sass/app.scss';
+import '../../src/sass/app.scss';
 function mask(str){
 	alert(str);
 }

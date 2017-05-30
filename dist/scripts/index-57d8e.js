@@ -60,20 +60,27 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/dist/";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
 
-/***/ 2:
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 1 */,
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-throw new Error("Cannot find module \"./../src/sass/app.scss\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_sass_app_scss__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_sass_app_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__src_sass_app_scss__);
 
 function mask(str) {
 	alert(str);
@@ -81,5 +88,4 @@ function mask(str) {
 mask(1);
 
 /***/ })
-
-/******/ });
+/******/ ]);
