@@ -16,7 +16,7 @@ const config = {
     output:{
         path: path.resolve(__dirname, './dist'),
         filename: 'scripts/[name]-[chunkhash:5].js',
-        //publicPath: '' 
+        //publicPath: 'dist/' 
     },
     module: {
         rules: [
