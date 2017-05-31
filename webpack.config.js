@@ -4,7 +4,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const extractSass = new ExtractTextPlugin({
     filename: "styles/[name].[contenthash:5].css",
-    // disable: process.env.NODE_ENV === "development"
 });
 const config = {
     context: path.resolve(__dirname, './src'),
