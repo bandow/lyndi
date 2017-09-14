@@ -2,18 +2,18 @@
 * Reset Style for Mobile
 * Author:雪丘行||Bandow
 * Author URI:http://www.unll123.com/
-* Date:2017-06-01
-* Version:0.0.1
+* Date:2017-09-08
+* Version:0.0.2
 * ================================================================== */
 $publicFont:-apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
 $white:#fff;
 $black:#000;
 
 @mixin transform($transforms) {
-	-moz-transform: $transforms;
-	-o-transform: $transforms;
-	-ms-transform: $transforms;
-	-webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
     transform: $transforms;
 }
 // rotate
@@ -22,7 +22,7 @@ $black:#000;
 }
 // scale
 @mixin scale($scale) {
-	 @include transform(scale($scale));
+   @include transform(scale($scale));
 } 
 // translate
 @mixin translate ($x, $y) {
@@ -35,9 +35,9 @@ $black:#000;
 //transform origin
 @mixin transform-origin ($origin) {
     -moz-transform-origin: $origin;
-	-o-transform-origin: $origin;
-	-ms-transform-origin: $origin;
-	-webkit-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
     transform-origin: $origin;
 }
 //transition all
@@ -175,9 +175,67 @@ $black:#000;
   -webkit-column-rule:$rule; 
   column-rule:$rule;
 }
-//flex
-@mixin display($flex){
-  display:-moz-#{$flex};
-  display:-webkit-#{$flex};
-  display:#{$flex};
+
+//*******************************************//flex 布局处理begin
+@mixin display($flex){  
+    display: -moz-#{$flex}; 
+    display: -webkit-#{$flex}; 
+    display: #{$flex};
 }
+// box-flex
+@mixin box-flex($num){
+    -moz-box-flex: $num; 
+    -webkit-box-flex: $num; 
+    box-flex: $num;
+    -webkit-flex:$num;
+    flex:$num;
+}
+@mixin align-content($content){
+  -webkit-align-content: $content;
+  align-content: $content;
+}
+@mixin align-items($items){
+  -webkit-align-items: $items;
+  align-items: $items;
+}
+@mixin align-self($self){
+  -webkit-align-self: $self;
+  align-self: $self;
+}
+@mixin order($order){
+  -webkit-order: $order;
+  order: $order;
+}
+@mixin justify-content($space){
+  -webkit-justify-content: $space;
+  -moz-justify-content: $space;
+  justify-content: $space;
+}
+@mixin flex-grow($grow){
+  -webkit-flex-grow:$grow;
+  flex-grow:$grow;
+}
+@mixin flex-shrink($shrink){
+  -webkit-flex-shrink:$shrink;
+  flex-shrink:$shrink;
+}
+@mixin flex-basis($basis){
+  -webkit-flex-basis:$basis;
+  flex-basis:$basis;
+}
+@mixin flex-flow($flow){
+  -webkit-flex-flow:$flow;
+  flex-flow:$flow;
+}
+@mixin flex-direction($direction){
+  -webkit-flex-direction:$direction;
+  flex-direction:$direction;
+}
+@mixin flex-wrap($wrap){
+  -webkit-flex-wrap:$wrap;
+  flex-wrap:$wrap;
+}
+//*******************************************//flex 布局处理end
+
+
+
